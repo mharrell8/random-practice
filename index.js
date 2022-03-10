@@ -1,11 +1,17 @@
 const submitBtn = document.querySelector('#submit');
+const listCont = document.querySelector('#list-container');
 
 
-function returnInput(inputPar) {
-    return console.log(inputPar);
+function createParagraphs(inputPar) {
+   const newP = document.createElement('p');
+   const newContent = document.createTextNode(inputPar);
+   newP.appendChild(newContent);
+   listCont.appendChild(newP);
+
 }
 
 submitBtn.onclick = () => {
     let input = document.querySelector('#input').value;
-    returnInput(input);
+    createParagraphs(input);
+    document.querySelector('#input').value = '';
 }
